@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express')
 const session = require('express-session')
 const exphbs = require('express-handlebars')
+const flash = require('connect-flash')
 const routes = require('./routes')
 const usePassport = require('./config/passport')
 const app = express()
@@ -19,8 +20,15 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+app.use(flash())
 usePassport(app)
-
+app.use((req, res, next) => {
+  res.locals.isAuthenticated = req.isAuthenticated()
+  res.locals.user = req.user
+  res.locals.success_msg = req.flash('success_msg')
+  res.locals.warning_msg = req.flash('warning_msg')
+  next()
+})
 app.use(routes)
 
 app.listen(PORT, () => {

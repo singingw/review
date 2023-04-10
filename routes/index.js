@@ -1,19 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const passport = require('passport')
+const home = require('./modules/home')
+const user = require('./modules/user')
+const auth = require('./modules/auth')
+const { authenticator } = require('../middleware/auth')
 
-router.get('/auth/google', passport.authenticate('google', {
-  scope: ['email', 'profile']
-}))
-router.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/',
-  failureRedirect: '/users/login'
-}))
+router.use('/user', user)
+router.use('/auth', auth)
+router.use('/', authenticator, home)
 
-router.get('/', (req, res) => {
-  res.render('index')
-})
-router.get('/users/login', (req, res) => {
-  res.render('home')
-})
 module.exports = router
