@@ -1,16 +1,17 @@
-header {
-  overflow: hidden;
-}
 .navbar {
   background-color: rgba(236, 234, 232, 0.64);
 }
 #matcha {
   height: 90vh;
   width: 67vw;
-  /*加滑動滾輪*/
   overflow-y:auto;
 }
 #search{
   height: 90vh;
+  width: 33vw;
+}
+#card-body{
+  background-color: black;
+  height: 85vh;
   width: 33vw;
 }

@@ -29,12 +29,13 @@
           <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-secondary" type="submit">Search</button>
         </form>
-        <!--特色搜尋-->
+        <!--類別搜尋-->
         <div class="container mt-4">
-          <h3>店家特色</h3>
+          <h3>店家類別</h3>
           <button type="button" class="btn btn-outline-secondary mt-2 mx-2">下午茶</button>
           <button type="button" class="btn btn-outline-secondary mt-2 mx-2">工作室</button>
           <button type="button" class="btn btn-outline-secondary mt-2 mx-2">餐廳</button>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">西點</button>
         </div>
         <!--地區搜尋-->
         <div class="container mt-4">
@@ -43,6 +44,7 @@
           <button type="button" class="btn btn-outline-secondary mt-2 mx-2">中部</button>
           <button type="button" class="btn btn-outline-secondary mt-2 mx-2">南部</button>
           <button type="button" class="btn btn-outline-secondary mt-2 mx-2">東部</button>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">宅配</button>
         </div>
         {{#if isAuthenticated}}
         <!--使用者喜好搜尋-->
@@ -52,10 +54,12 @@
           <button type="button" class="btn btn-outline-secondary mt-2 mx-2">評論過</button>
           <button type="button" class="btn btn-outline-secondary mt-2 mx-2">有推薦</button>
         </div>
-        <div class="d-flex container mt-5">
-          <h3>新增餐廳</h3>
-          <button type="button" class="btn btn-outline-secondary mx-2">+</button>
-        </div>
+        <form action="/matcha/create" method="GET" style="display: contents;">
+          <div class="d-flex container mt-5">
+            <h3>新增餐廳</h3>
+            <button type="submit" class="btn btn-outline-secondary mx-2">+</button>
+          </div>
+        </form>
         {{/if}}
       </div>
     </div>
