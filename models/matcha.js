@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Matcha extends Model {
 
     static associate(models) {
-      // define association here
+      Matcha.belongsTo(models.Category, { foreignKey: 'categoryId' })
     }
   }
   Matcha.init({
