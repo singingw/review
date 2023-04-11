@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 3000
 app.use(express.static('public'))
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+app.use(express.urlencoded({ extended: true }))
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
