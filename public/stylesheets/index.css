@@ -1,21 +1,16 @@
 header {
   overflow: hidden;
 }
-
-.navbar .navbar-brand {
-  color: #4592af;
+.navbar {
+  background-color: rgba(236, 234, 232, 0.64);
 }
-
-.navbar .navbar-brand:hover {
-  color: #226089;
-}
-
 #matcha {
-  height: 92vh;
-  width: 65vw;	
+  height: 90vh;
+  width: 67vw;
+  /*加滑動滾輪*/
+  overflow-y:auto;
 }
-
 #search{
   height: 90vh;
-  width: 35vw;
+  width: 33vw;
 }

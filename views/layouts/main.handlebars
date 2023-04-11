@@ -4,23 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matcha Review Website</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
 <body>
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light">
     <div class="container-fluid">
       <a class="navbar-brand">Matcha Review Website | Taiwan</a>
       {{#if isAuthenticated}}
-        <a href="/user/logout" class="btn btn-outline-danger my-2 my-sm-0">Logout</a>
+        <a href="/user/logout" class="btn btn-outline-secondary my-2 my-sm-0">Logout</a>
       {{else}}
-        <a href="/auth/google" class="btn btn-outline-info my-2 my-sm-0">Login</a>
+        <a href="/auth/google" class="btn btn-outline-secondary my-2 my-sm-0">Login</a>
       {{/if}}
     </div>
   </nav>
 
-  {{{body}}}
+  <div class="d-flex">
+    <div id="search" class="container bg-light">
+      <div class="container-fluid mt-4">
+        {{> message}}
+        <!--店名搜尋-->
+        <form class="d-flex">
+          <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-secondary" type="submit">Search</button>
+        </form>
+        <!--特色搜尋-->
+        <div class="container mt-4">
+          <h3>店家特色</h3>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">下午茶</button>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">工作室</button>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">餐廳</button>
+        </div>
+        <!--地區搜尋-->
+        <div class="container mt-4">
+          <h3>地區</h3>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">北部</button>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">中部</button>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">南部</button>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">東部</button>
+        </div>
+        {{#if isAuthenticated}}
+        <!--使用者喜好搜尋-->
+        <div class="container mt-4">
+          <h3>抹茶</h3>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">已收藏</button>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">評論過</button>
+          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">有推薦</button>
+        </div>
+        <div class="d-flex container mt-5">
+          <h3>新增餐廳</h3>
+          <button type="button" class="btn btn-outline-secondary mx-2">+</button>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  
+    <div id="matcha">{{{body}}}</div>
+  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
