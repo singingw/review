@@ -1,17 +1,50 @@
 .navbar {
   background-color: rgba(236, 234, 232, 0.64);
 }
+.nav-link {
+  color: black;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
 #matcha {
   height: 90vh;
   width: 67vw;
   overflow-y:auto;
 }
-#search{
+#search {
   height: 90vh;
   width: 33vw;
+  overflow-y:auto;
 }
-#card-body{
-  background-color: black;
-  height: 85vh;
-  width: 33vw;
+.text-center {
+  border: none;
+}
+#index {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
+}
+.card img {
+  height: 180px;
+  width: 180px;
+  border-radius: 10%;
+}
+.card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight:bold;
+  font-size:medium;
+  text-align: left;
+  margin-bottom: 0.1rem;
+}
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: xx-small;
+  text-align: left;
+  margin-top: 0.1rem;
 }

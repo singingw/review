@@ -2,20 +2,27 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="true" href="#">Active</a>
+        <a class="nav-link active" aria-current="true" href="#">抹茶資訊</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">抹民推薦</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link" href="#">最新評論</a>
       </li>
     </ul>
   </div>
-  <div class="card-body">
-    {{> message}}
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div id="index" class="card-body mx-2">
+    {{#each matcha}}
+    <a href="/matcha/?{{ this.id }}">
+      <div class="mt-4">
+        <img src="{{ this.image }}" class="card-img-top">
+        <div>
+          <h4 class="card-title mt-2">{{ this.name }}</h4>
+          <p class="card-text">{{ this.address }}</p>
+        </div>
+      </div>
+    </a>
+    {{/each}}
   </div>
 </div>

@@ -1,8 +1,20 @@
 const express = require('express')
 const router = express.Router()
+const { Matcha } = require('../../models')
 
-router.get('/login', (req, res) => {
-  res.render('index')
+router.get('/login', async (req, res) => {
+  try {
+    const matcha = await Matcha.findAll({
+      attributes: [ 
+        'id', 'image', 'name', 'address', 'district' 
+      ],
+      raw: true,
+      order: [['district', 'ASC']]
+    })
+    res.render('index',{ matcha })
+  } catch (err) {
+      next(err)
+  }
 })
 router.get('/logout', (req, res) => {
   req.logout( (err) =>{
