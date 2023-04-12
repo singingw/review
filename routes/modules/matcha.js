@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const { imgurFileHandler } = require('../../helpers/file-helpers')
 const { Matcha,Category } = require('../../models')
 
 router.get('/', (req, res) => {
@@ -16,6 +17,9 @@ router.post('/create', async (req, res) => {
       where: { name:category },
       raw: true
     })
+    const { file } = req 
+    const filePath = await imgurFileHandler(file)
+
     await Matcha.create({
       name,
       tel,
@@ -23,11 +27,13 @@ router.post('/create', async (req, res) => {
       openingHours,
       website,
       district,
-      categoryId:existingCategory.id
+      categoryId: existingCategory.id,
+      image: filePath || null
     })
-    req.flash('success_messages', 'successfully created')
-    res.redirect('index')
-  } catch (error) { console.error(error) }
+    res.redirect('/')
+  } catch (err) {
+      next(err)
+  }
 })
 
 module.exports = router

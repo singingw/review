@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-body pt-4 mx-4">
-    <form action="/matcha/create" method="POST">
+    <form action="/matcha/create" method="POST" enctype="multipart/form-data">
       <div class="form-row mb-3">
         <label class="form-label" for="name">店家名稱</label>
         <input class="form-control" type="text" name="name" id="name" placeholder="Enter name" required>
@@ -39,11 +39,10 @@
           <option value="西點">西點</option>
         </select>
       </div>
-      <!--
       <div class="form-row mb-3">
-        <label class="form-label" for="image">圖片連結</label>
-        <input class="form-control" type="url" name="image" id="image" value="http://">
-      </div>-->
+        <label class="form-label" for="image">上傳圖片</label>
+        <input class="form-control" type="file" class="form-control-file" name="image" id="image" value="http://">
+      </div>
       <div class="form-row mb-3">
         <label class="form-label" for="website">網頁連結</label>
         <input class="form-control" type="url" name="website" id="website" value="http://">
