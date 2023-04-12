@@ -3,8 +3,8 @@ const router = express.Router()
 const { imgurFileHandler } = require('../../helpers/file-helpers')
 const { Matcha,Category } = require('../../models')
 
-router.get('/', (req, res) => {
-  res.render('index')
+router.get('/matcha/:matchaId', (req, res) => {
+  res.render('home')
 })
 router.get('/create', (req, res) => {
   res.render('create')
