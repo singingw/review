@@ -51,6 +51,52 @@ router.post('/create', async (req, res) => {
       next(err)
   }
 })
+router.get('/edit/:matchaId', async (req, res) => {
+  try {
+    const matchaId = req.params.matchaId
+    const matcha = await Matcha.findOne({
+      where: { id: matchaId },
+      include: [{
+          model: Category,
+          attributes: ['name']
+      }],
+      nest: true,
+      raw: true
+    })
+    res.render('edit',{matcha})
+  } catch (err) {
+    console.error(err)
+  }
+})
+router.put('/edit/:matchaId', async (req, res) => {
+  const { name, tel, address, openingHours, website, district, category } = req.body
+  if (!name) throw new Error('name is required!')
+  try {
+    const existingCategory = await Category.findOne({ 
+      where: { name:category },
+      raw: true
+    })
+    const matchaId = req.params.matchaId
+    const matcha = await Matcha.findByPk(matchaId)
+
+    const { file } = req 
+    const filePath = await imgurFileHandler(file)
+
+    await matcha.update({
+      name,
+      tel,
+      address,
+      openingHours,
+      website,
+      district,
+      categoryId: existingCategory.id,
+      image: filePath || matcha.image
+    })
+    res.redirect(`/matchas/matcha/${matchaId}`)
+  } catch (err) {
+      console.error(err)
+  }
+})
 router.post('/collect/:matchaId', async (req, res) => {
   try {
     const matchaId = req.params.matchaId

@@ -1,19 +1,19 @@
 <div class="card">
   <div class="card-body pt-4 mx-4">
-    <form action="/matchas/create" method="POST" enctype="multipart/form-data">
+    <form action="/matchas/edit/{{matcha.id}}?_method=PUT" method="POST" enctype="multipart/form-data">
       <div class="form-row mb-3">
         <label class="form-label" for="name">店家名稱</label>
-        <input class="form-control" type="text" name="name" id="name" placeholder="Enter name" required>
+        <input class="form-control" type="text" name="name" id="name" value="{{matcha.name}}" required>
       </div>
       <div class="form-row mb-3">
         <label class="form-label" for="tel">聯絡電話</label>
-        <input class="form-control" type="text" name="tel" id="tel" placeholder="0774-20-0909" minlength="8"
+        <input class="form-control" type="text" name="tel" id="tel" value="{{matcha.tel}}" minlength="8"
           maxlength="10">
       </div>
       <div class="form-row mb-3">
         <label class="form-label" for="district">店家地區</label>
         <select class="form-control" name="district" id="district" required>
-          <option value="" disabled selected>Choose district</option>
+          <option value="{{matcha.district}}" selected>{{matcha.district}}</option>
           <option value="北部">北部</option>
           <option value="中部">中部</option>
           <option value="南部">南部</option>
@@ -23,16 +23,16 @@
       </div>
       <div class="form-row mb-3">
         <label class="form-label" for="address">店家地址</label>
-        <input class="form-control" type="text" name="address" id="address" placeholder="Enter address">
+        <input class="form-control" type="text" name="address" id="address" value="{{matcha.address}}">
       </div>
       <div class="form-row mb-3">
         <label class="form-label" for="openingHours">營業時間</label>
-        <input class="form-control" type="text" name="openingHours" id="openingHours" placeholder="08:00 - 17:00">
+        <input class="form-control" type="text" name="openingHours" id="openingHours" value="{{matcha.openingHours}}">
       </div>
       <div class="form-row mb-3">
         <label class="form-label" for="category">店家類別</label>
         <select class="form-control" name="category" id="category" required>
-          <option value="" disabled selected>Choose category</option>
+          <option value="{{matcha.Category.name}}" selected>{{matcha.Category.name}}</option>
           <option value="下午茶">下午茶</option>
           <option value="工作室">工作室</option>
           <option value="餐廳">餐廳</option>
@@ -45,7 +45,7 @@
       </div>
       <div class="form-row mb-3">
         <label class="form-label" for="website">網頁連結</label>
-        <input class="form-control" type="url" name="website" id="website" value="http://">
+        <input class="form-control" type="url" name="website" id="website" value="{{matcha.website}}">
       </div>
       <button type="submit" class="btn btn-secondary">Create Restaurant</button>
     </form>
