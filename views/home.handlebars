@@ -42,11 +42,16 @@
           <i class="fas fa-light fa-thumbs-up" style="color: #8b9098;"></i>
           20
         </button>
-        <button type="button" class="btn btn-outline-secondary mt-2 mx-2">
-          <i class="fas fa-light fa-heart" style="color: #8b9098;"></i>
-          <i class="fa-sharp fa-regular fa-heart" style="color: #8b9098;"></i>
-          蒐藏
-        </button>
+        <form action="/matchas/collect/{{matcha.id}}" method="POST">
+          <button type="submit" class="btn btn-outline-secondary mt-2 mx-2">
+            {{#if collect}}
+            <i class="fas fa-light fa-heart" style="color: #8b9098;"></i>
+            {{else}}
+            <i class="fa-sharp fa-regular fa-heart" style="color: #8b9098;"></i>
+            {{/if}}
+            收藏
+          </button>
+        </form>
         <button type="button" class="btn btn-outline-secondary mt-2 mx-2">
           <i class="fas fa-light fa-pen" style="color: #8b9098;"></i>
           修改
