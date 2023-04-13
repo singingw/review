@@ -7,6 +7,8 @@ module.exports = (sequelize, DataTypes) => {
 
     static associate(models) {
       Matcha.belongsTo(models.Category, { foreignKey: 'categoryId' })
+      Matcha.belongsTo(models.Collect, { foreignKey: 'collectId' })
+      Matcha.belongsTo(models.Recommend, { foreignKey: 'recommendId' })
     }
   }
   Matcha.init({
