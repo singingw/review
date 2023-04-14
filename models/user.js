@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       User.belongsTo(models.Collect, { foreignKey: 'collectId' })
       User.belongsTo(models.Recommend, { foreignKey: 'recommendId' })
+      User.belongsTo(models.MatchaComment, { foreignKey: 'MatchaCommentId' })
     }
   }
   User.init({
