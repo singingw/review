@@ -5,8 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class MatchaComment extends Model {
     static associate(models) {
-      MatchaComment.hasMany(models.Matcha, { foreignKey: 'MatchaCommentId' })
-      MatchaComment.hasMany(models.User, { foreignKey: 'MatchaCommentId' })
+      MatchaComment.belongsTo(models.Matcha, { foreignKey: 'matchaId' })
+      MatchaComment.belongsTo(models.User, { foreignKey: 'userId' })
     }
   }
   MatchaComment.init({

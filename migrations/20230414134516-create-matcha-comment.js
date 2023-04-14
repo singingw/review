@@ -12,10 +12,10 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
-      userId: {
+      user_id: {
         type: Sequelize.INTEGER
       },
-      matchaId: {
+      matcha_id: {
         type: Sequelize.INTEGER
       },
       image: {

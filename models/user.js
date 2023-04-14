@@ -5,9 +5,9 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-      User.belongsTo(models.Collect, { foreignKey: 'collectId' })
-      User.belongsTo(models.Recommend, { foreignKey: 'recommendId' })
-      User.belongsTo(models.MatchaComment, { foreignKey: 'MatchaCommentId' })
+      User.hasMany(models.Collect, { foreignKey: 'userId' })
+      User.hasMany(models.Recommend, { foreignKey: 'userId' })
+      User.hasMany(models.MatchaComment, { foreignKey: 'userId' })
     }
   }
   User.init({

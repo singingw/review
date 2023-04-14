@@ -4,10 +4,9 @@ const {
 } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Collect extends Model {
-
     static associate(models) {
-      Collect.hasMany(models.Matcha, { foreignKey: 'collectId' })
-      Collect.hasMany(models.User, { foreignKey: 'collectId' })
+      Collect.belongsTo(models.Matcha, { foreignKey: 'matchaId' })
+      Collect.belongsTo(models.User, { foreignKey: 'userId' })
     }
   }
   Collect.init({

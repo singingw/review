@@ -1,5 +1,4 @@
 'use strict'
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -7,7 +6,6 @@ module.exports = {
       type: Sequelize.STRING,
     })
   },
-
   async down (queryInterface, Sequelize) {
     await queryInterface.removeColumn('Users', 'image')
   }
