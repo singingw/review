@@ -11,7 +11,7 @@ const { ErrorHandler } = require('../middleware/error-handler')
 router.use('/matchas', authenticator, upload.single('image'), matchas)
 router.use('/user', user)
 router.use('/auth', auth)
-router.use('/', authenticator, home)
+router.use('/', authenticator, upload.single('image'), home)
 router.use('/', ErrorHandler)
 
 module.exports = router
