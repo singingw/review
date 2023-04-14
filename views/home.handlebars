@@ -79,18 +79,19 @@
             <button class="form-control" style="width: 20vw;height: 50px;border-radius: 10%; text-align: left;" onclick="showPopup('add-comment')">新增評論</button>
           </div>
         </div>
+        {{#each matchaComment}}
         <div class="d-flex mt-4" style="width: 23vw;">
           <div>
-            <img class="mx-1" src="https://i.imgur.com/aMHhegr.jpeg" alt="使用者頭像"
+            <img class="mx-1" src="{{this.User.image}}" alt="使用者頭像"
               style="width: 50px;height: 50px;border-radius: 50%">
           </div>
           <div class="container mx-1">
-            <h4>名字</h4>
-            <h5>這個錯誤可能是因為您試圖訪問一個未定義或為空的值的屬性。根據您之前提供的代碼，我們可以假設 test 是一個對象數組，其中包含一些餐廳信息，每個餐廳對象應包含一個 geometry 屬性，而 geometry 屬性又包含一個
-              location 屬性，該屬性的值是一個包含 lat 和 lng 屬性的對象。</h5>
-            <img class="rounded mx-4" src="https://i.imgur.com/aMHhegr.jpeg" alt="使用者頭像" style="width: 250px;height: 250px">
+            <h4>{{this.User.name}}</h4>
+            <h5>{{this.description}}</h5>
+            <img class="rounded mx-4" src="{{this.image}}" alt="使用者頭像" style="width: 250px;height: 250px">
           </div>
         </div>
+        {{/each}}
       </div>
     </div>
 
@@ -121,15 +122,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="hidePopup('add-comment')">
       </button>
     </div>
-    <form action="/matchas/matcha/add-comment" method="POST" enctype="multipart/form-data">
-      <div class="form-row mb-3">
-        <label class="form-label" for="recommend">推薦抹民來這裡嗎？</label>
-        <select class="form-control" name="recommend" id="recommend">
-          <option value="" disabled selected>選擇是否推薦</option>
-          <option value="true">是</option>
-          <option value="false">否</option>
-        </select>
-      </div>
+    <form action="/comment/add/{{matcha.id}}" method="POST" enctype="multipart/form-data">
       <div class="form-row mb-3">
         <label class="form-label" for="image">上傳圖片</label>
         <input class="form-control" type="file" class="form-control-file" name="image" id="image" value="http://">

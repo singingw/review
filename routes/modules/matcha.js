@@ -1,13 +1,17 @@
 const express = require('express')
 const router = express.Router()
 const { imgurFileHandler } = require('../../helpers/file-helpers')
-const { Matcha,Category,Collect,Recommend } = require('../../models')
+const { User, Matcha, Category, Collect, Recommend, MatchaComment } = require('../../models')
 const { getUser } = require('../../helpers/helper')
 
 router.get('/matcha/:matchaId', async (req, res) => {
   try {
     const matchaId = req.params.matchaId
     const userId = getUser(req).id
+    const user = await User.findOne({ 
+      where: { id:userId },
+      raw: true
+    })
     const matcha = await Matcha.findOne({
       where: { id: matchaId },
       include: [{
@@ -16,28 +20,29 @@ router.get('/matcha/:matchaId', async (req, res) => {
       }],
       nest: true,
       raw: true
-    })
+    }) 
     if (!matcha) throw new Error('找不到此抹茶資訊')
+    const matchaComment = await MatchaComment.findAll({
+        where: { matchaId },
+        attributes: ['id', 'description', 'image', 'userId', 'createdAt'],
+        include: [{
+          model: User,
+          attributes: ['name', 'image']
+        }],
+        nest: true,
+        raw: true,
+        order: [['created_at', 'DESC']]
+    })
     const recommend = await Recommend.findOne({
       where: { userId, matchaId }
     })   
     const collect = await Collect.findOne({
       where: { userId, matchaId }
     })
-    let recommendCount = await Recommend.count({
+    const recommendCount = await Recommend.count({
       where: { matchaId }
     })
-    if (collect != null && recommend != null) { 
-      res.render('home', { matcha, collect, recommend, recommendCount })
-    } else if (collect != null || recommend != null) {
-      if (recommend != null) {
-        res.render('home', { matcha, recommend, recommendCount })
-      } else {
-        res.render('home', { matcha, collect, recommendCount })
-      }
-    } else {
-      res.render('home', { matcha, recommendCount })
-    }
+    res.render('home', { user, matcha, collect, recommend, recommendCount, matchaComment })
   } catch (err) {
     next(err)
   }

@@ -20,7 +20,7 @@ router.get('/', async (req, res) => {
     })
     res.render('index',{ matcha, user })
   } catch (err) {
-      next(err)
+    next(err)
   }
 })
 router.put('/edit/user', async (req, res) => {
@@ -36,11 +36,10 @@ router.put('/edit/user', async (req, res) => {
       name,
       image: filePath || user.image
     })
-    res.redirect(`/`)
+    res.redirect('back')
   } catch (err) {
-      console.error(err)
+    next(err)
   }
 })
-
 
 module.exports = router
