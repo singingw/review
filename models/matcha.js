@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     openingHours: DataTypes.STRING,
     image: DataTypes.STRING,
     website: DataTypes.STRING,
-    district: DataTypes.STRING
+    district: DataTypes.STRING,
+    categoryId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Matcha',
