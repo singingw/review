@@ -7,13 +7,21 @@ const session = require('express-session')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const flash = require('connect-flash')
+const handlebarsHelpers = require('./helpers/handlebars-helpers')
 const routes = require('./routes')
 const usePassport = require('./config/passport')
 const app = express()
 const PORT = process.env.PORT || 3000
 
 app.use(express.static('public'))
-app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }))
+
+const hbs = exphbs.create({
+    partialsDir: 'views/partials/',
+    layoutsDir: 'views/layouts/',
+    defaultLayout: 'main.handlebars',
+    helpers: handlebarsHelpers
+})
+app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))

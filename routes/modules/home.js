@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { imgurFileHandler } = require('../../helpers/file-helpers')
-const { User, Matcha } = require('../../models')
+const { User, Matcha, Category, MatchaComment } = require('../../models')
 const { getUser } = require('../../helpers/helper')
 
 router.get('/', async (req, res) => {
@@ -19,6 +19,35 @@ router.get('/', async (req, res) => {
       order: [['district', 'ASC']]
     })
     res.render('index',{ matcha, user })
+  } catch (err) {
+    next(err)
+  }
+})
+router.get('/feeds', async (req, res) => {
+  try {
+    const userId = getUser(req).id
+    const user = await User.findOne({ 
+      where: { id:userId },
+      raw: true
+    })
+    const matcha = await Matcha.findAll({
+      limit: 10,
+      order: [['createdAt', 'DESC']],
+      include: [{
+        model: Category,
+        attributes: ['name']
+      }],
+      nest: true,
+      raw: true
+    })
+    const matchaComment = await MatchaComment.findAll({
+      limit: 10,
+      include: [User, Matcha, ],
+      order: [['createdAt', 'DESC']],
+      nest: true,
+      raw: true
+    })
+    res.render('feeds',{ user, matcha, matchaComment })
   } catch (err) {
     next(err)
   }
