@@ -21,6 +21,15 @@ li {
   width: 33vw;
   overflow-y:auto;
 }
+.btn-checkbox {
+  border-radius: 5px;
+  color: rgb(126, 122, 122);
+  border: 1px solid rgb(126, 122, 122);
+}
+.btn-checkbox:hover {
+  background-color: rgb(126, 122, 122);
+  color: rgb(253, 251, 251);
+}
 #matcha-comment {
   height: 35vh;
   width: 28vw;
@@ -30,7 +39,7 @@ li {
   width: 28vw;
 }
 .btn {
-  font-size:21px;
+  font-size:18px;
 }
 .text-center {
   border: none;

@@ -11,7 +11,7 @@
 <body>
   <nav class="navbar navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/user/login">Matcha Review Website | Taiwan</a>
+      <a class="navbar-brand" href="/">Matcha Review Website | Taiwan</a>
       {{#if isAuthenticated}}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,37 +39,85 @@
         {{> message}}
         <!--店名搜尋-->
         <form class="d-flex">
-          <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-secondary" type="submit">Search</button>
+          <input class="form-control mx-1" style="width: 23vw; height: 50px" type="search" placeholder="請輸入要尋找的抹茶名稱..." aria-label="Search">
+          <button class="btn btn-outline-secondary mx-1" type="submit">搜尋</button>
         </form>
-        <!--類別搜尋-->
-        <div class="container mt-4">
-          <h3>店家類別</h3>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">下午茶</button>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">工作室</button>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">餐廳</button>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">西點</button>
-        </div>
-        <!--地區搜尋-->
-        <div class="container mt-4">
-          <h3>地區</h3>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">北部</button>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">中部</button>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">南部</button>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">東部</button>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">宅配</button>
+        <div class="card mt-4" style="width: 29vw;">
+          <form action="/filter" method="post">
+            <label class="card-header" style="width: 29vw;">篩選條件：</label><br>
+            <div class="card-body" style="background-color: rgba(238, 240, 242, 0.663);">            
+              <!--類別搜尋-->
+              <div class="container mt-1">
+                <h4>店家類別</h4>
+                <label class="btn btn-checkbox mt-1">
+                  <input type="checkbox" name="category[]" value="下午茶">
+                  <span>下午茶</span>
+                </label>
+                <label class="btn btn-checkbox mt-1 mx-1">
+                  <input type="checkbox" name="category[]" value="工作室">
+                  <span>工作室</span>
+                </label>
+                <label class="btn btn-checkbox mt-1">
+                  <input type="checkbox" name="category[]" value="餐廳">
+                  <span>餐廳</span>
+                </label>
+                <label class="btn btn-checkbox mt-1 mx-1">
+                  <input type="checkbox" name="category[]" value="西點">
+                  <span>西點</span>
+                </label>
+              </div>
+              <!--地區搜尋-->
+              <div class="container mt-3">
+                <h4>地區</h4>
+                <label class="btn btn-checkbox mt-1">
+                  <input type="checkbox" name="district[]" value="北部">
+                  <span>北部</span>
+                </label>
+                <label class="btn btn-checkbox mt-1 mx-1">
+                  <input type="checkbox" name="district[]" value="中部">
+                  <span>中部</span>
+                </label>
+                <label class="btn btn-checkbox mt-1">
+                  <input type="checkbox" name="district[]" value="南部">
+                  <span>南部</span>
+                </label>
+                <label class="btn btn-checkbox mt-1 mx-1">
+                  <input type="checkbox" name="district[]" value="東部">
+                  <span>東部</span>
+                </label>
+                <label class="btn btn-checkbox mt-1">
+                  <input type="checkbox" name="district[]" value="宅配">
+                  <span>宅配</span>
+                </label>
+              </div>
+              {{#if isAuthenticated}}
+              <!--使用者喜好搜尋-->
+              <div class="container mt-3">
+                <h4>抹茶</h4>
+                <label class="btn btn-checkbox mt-1">
+                  <input type="checkbox" name="userMatcha[]" value="已收藏">
+                  <span>已收藏</span>
+                </label>
+                <label class="btn btn-checkbox mt-1">
+                  <input type="checkbox" name="userMatcha[]" value="評論過">
+                  <span>評論過</span>
+                </label>
+                <label class="btn btn-checkbox mt-1">
+                  <input type="checkbox" name="userMatcha[]" value="有推薦">
+                  <span>有推薦</span>
+                </label>
+              </div>
+              {{/if}}
+              <div style="text-align: right;">
+                <input class="btn btn-secondary mt-2" style="display: inline-block;" type="submit" value="送出">
+              </div>
+            </div>
+          </form>
         </div>
         {{#if isAuthenticated}}
-        <!--使用者喜好搜尋-->
-        <div class="container mt-4">
-          <h3>抹茶</h3>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">已收藏</button>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">評論過</button>
-          <button type="button" class="btn btn-outline-secondary mt-2 mx-2">有推薦</button>
-        </div>
         <form action="/matchas/create" method="GET" style="display: contents;">
           <div class="d-flex container mt-5">
-            <h3>新增餐廳</h3>
+            <h4>新增餐廳</h4>
             <button type="submit" class="btn btn-outline-secondary mx-2">+</button>
           </div>
         </form>
@@ -107,8 +155,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/908f00b00c.js" crossorigin="anonymous"></script>
-
-
   <script src="/javascripts/map.js"></script>
 </body>
 </html>
