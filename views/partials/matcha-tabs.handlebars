@@ -1,8 +1,12 @@
 <ul class="nav nav-tabs card-header-tabs">
   <li class="nav-item">
-    <a class="nav-link {{#ifCond route 'index'}}active{{/ifCond}}" href="/">抹茶資訊</a>
+    <a class="nav-link {{#ifCond route 'index'}}active{{/ifCond}}" style="font-size:18px; {{#ifCond route 'index'}}background-color: rgb(224,229,223);{{/ifCond}} "href="/">
+    抹茶資訊</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link {{#if isAuthenticated}}{{else}}disabled{{/if}}{{#ifCond route 'feeds'}}active{{/ifCond}}" href="/feeds">最新動態</a>
+    <a class="nav-link {{#if isAuthenticated}}{{else}}disabled
+    {{/if}} {{#ifCond route 'feeds'}}active{{/ifCond}}" 
+    style="font-size:18px; {{#ifCond route 'feeds'}}background-color: rgb(224,229,223);{{/ifCond}}" 
+    href="/feeds">最新動態</a>
   </li>
 </ul>

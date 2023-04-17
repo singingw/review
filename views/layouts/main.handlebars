@@ -9,15 +9,15 @@
   <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
 <body>
-  <nav class="navbar navbar-light">
+  <nav class="navbar navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">Matcha Review Website | Taiwan</a>
       {{#if isAuthenticated}}
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
           歡迎回來
         </a>
-        <ul class="dropdown-menu dropdown-menu-end">
+        <ul class="dropdown-menu dropdown-menu-end card-color">
           <li><a class="dropdown-item" href="#" onclick="showPopup('edit-user')">個人資訊</a></li>
           <li>
             <hr class="dropdown-divider">
@@ -28,7 +28,7 @@
         </ul>
       </li>
       {{else}}
-        <a href="/auth/google" class="btn btn-outline-secondary my-2 my-sm-0">登入</a>
+        <a href="/auth/google" class="btn btn-outline-light my-2 my-sm-0">登入</a>
       {{/if}}
     </div>
   </nav>
@@ -125,12 +125,12 @@
       </div>
     </div>
   
-    <div id="matcha">{{{body}}}</div>
+    <div id="matcha" style="background-color: rgb(224,229,223);">{{{body}}}</div>
   </div>
 
   <!--編輯個人資訊-->
   <div id="edit-user" class="popup">
-    <div class="popup-content">
+    <div class="popup-content card-color">
       <div class="d-flex" style="justify-content: space-between;">
         <h3>編輯個人資訊</h3>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="hidePopup('edit-user')">
@@ -139,11 +139,11 @@
       <form action="/edit/user?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="form-row mb-3 mt-2" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
           <img id="user_img" src="{{user.image}}" style="width: 150px;height: 150px;border-radius: 50%">
-          <input type="file" onchange="readURL(this)" targetID="user_img" name="image">
+          <input class="input-color"type="file" onchange="readURL(this)" targetID="user_img" name="image">
         </div>
         <div class="form-row mb-3">
           <label class="form-label" for="name">名稱</label>
-          <input class="form-control" type="text" name="name" id="name" value="{{user.name}}" required>
+          <input class="form-control input-color" type="text" name="name" id="name" value="{{user.name}}" required>
         </div>
         <div class="col-auto mt-2">
           <button type="submit" class="btn btn-secondary mb-3">發送</button>

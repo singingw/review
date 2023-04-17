@@ -1,25 +1,47 @@
 .navbar {
-  background-color: rgba(236, 234, 232, 0.64);
+  background-color: rgb(123,139,111);
 }
 .nav-link {
-  color: black;
+  color: #102832;
 }
 a {
-  color: black;
+  color: #102832;
   text-decoration: none;
 }
 li {
   list-style: none;
 }
 #matcha {
-  height: 90vh;
+  height: 92vh;
   width: 67vw;
   overflow-y:auto;
 }
 #search {
-  height: 90vh;
+  height: 92vh;
   width: 33vw;
   overflow-y:auto;
+}
+#index {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
+}
+#matcha-comment {
+  height: 35vh;
+  width: 28vw;
+}
+#public-comment {
+  height: 35vh;
+  width: 28vw;
+}
+.center {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+}
+.btn {
+  font-size:18px;
 }
 .btn-checkbox {
   border-radius: 5px;
@@ -30,24 +52,21 @@ li {
   background-color: rgb(126, 122, 122);
   color: rgb(253, 251, 251);
 }
-#matcha-comment {
-  height: 35vh;
-  width: 28vw;
-}
-#public-comment {
-  height: 35vh;
-  width: 28vw;
-}
-.btn {
-  font-size:18px;
-}
 .text-center {
   border: none;
 }
-#index {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content:space-between;
+.input-color {
+  color: #323558;
+  background-color: rgb(236,236,234);
+}
+.card-color {
+  color: #323558;
+  background-color: rgb(224,229,223);
+}
+.card-header-color {
+  font-size:18px;
+  color: #323558;
+  background-color: rgb(150,164,139);
 }
 .card img {
   height: 250px;
@@ -62,6 +81,7 @@ li {
   font-size:medium;
   text-align: left;
   margin-bottom: 0.1rem;
+  color: #102832;
 }
 .card-text {
   overflow: hidden;
@@ -70,6 +90,7 @@ li {
   font-size: xx-small;
   text-align: left;
   margin-top: 0.1rem;
+  color: #102832;
 }
 .popup {
 	display: none;
@@ -86,7 +107,8 @@ li {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: #fff;
+	color: #323558;
+  background-color: rgb(224,229,223);
 	padding: 20px;
 	border-radius: 5px;
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.5);

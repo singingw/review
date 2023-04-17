@@ -1,22 +1,22 @@
-<div class="card text-center">
-  <div class="card-header">
+<div class="card text-center card-color">
+  <div class="card-header card-header-color">
     {{> matcha-tabs route='feeds'}}
   </div>
 
   <div class="mx-5 mt-4">
-    <h1 style="text-align: left;">最新動態</h1>
+    <h1 style="text-align: left; color: #102832;">最新動態</h1>
     <hr />
   </div>
 
   <div class="d-flex mx-5 mt-4">
     <div>
       <div class="card" style="width: 30vw;">
-        <div class="card-header"> 最新抹茶 </div>
-        <div class="card-body" style="height: 27vw; overflow-y:auto;">
+        <div class="card-header card-header-color"> 最新抹茶 </div>
+        <div class="card-body card-color" style="height: 27vw; overflow-y: auto;">
           {{#each matcha}}
           <div style="text-align: left;">
             <h4 class="mb-3">
-              <a class="link-primary" href="/matchas/matcha/{{this.id}}">{{this.name}}</a>
+              <a class="link-primary" href="/matchas/matcha/{{this.id}}" style="color: #292b48;">{{this.name}}</a>
               <small class="fs-6">[{{this.Category.name}}]</small>
               <small style="font-size:medium;">at {{relativeTimeFromNow this.createdAt}}</small>
             </h4>
@@ -43,12 +43,12 @@
 
     <div>
       <div class="card" style="width: 30vw;">
-        <div class="card-header"> 最新評論 </div>
-        <div class="card-body" style="height: 27vw; overflow-y:auto;">
+        <div class="card-header card-header-color"> 最新評論 </div>
+        <div class="card-body card-color" style="height: 27vw; overflow-y: auto;">
         {{#each matchaComment}}
           <div style="text-align: left;">
             <h4>
-              <a class="link-primary" href="/matchas/matcha/{{this.Matcha.id}}">{{this.Matcha.name}}</a>
+              <a class="link-primary" href="/matchas/matcha/{{this.Matcha.id}}" style="color: #292b48;">{{this.Matcha.name}}</a>
             </h4>
             <p class="my-1" style="white-space: break-spaces;">{{this.description}}</p>
             <a class="link-secondary" href="/users/{{this.User.id}}">{{this.User.name}}</a>
@@ -60,5 +60,4 @@
       </div>
     </div>
   </div>
-
 </div>
