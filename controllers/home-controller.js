@@ -1,4 +1,5 @@
 const { imgurFileHandler } = require('../helpers/file-helpers')
+const { Op } = require('sequelize')
 const { User, Matcha, Category, MatchaComment } = require('../models')
 const { getUser, getUserData, AllMatcha, MatchaDistrict, MatchaCategory, MatchaDistrictAndCategory, getMatchedMatchas, getMatchedCollectComment, getMatchedCommentRecommend, getMatchedCollectRecommend, getMatchedRecommend, getMatchedCollect, getMatchedComment } = require('../helpers/helper')
 
@@ -54,6 +55,19 @@ const homeController = {
     } catch (err) {
       next(err)
     }
+  },
+  search:async (req, res, next) => {
+    const { user } = await getUserData(req)
+    const keyword = req.body.keyword.trim()
+    const matcha = await Matcha.findAll({
+      where: {
+        name: { [Op.substring]: keyword }
+      },
+      attributes: [ 'id', 'image', 'name', 'address', 'district' ],
+      raw: true,
+      order: [['district', 'ASC']]
+    })
+    res.render('index',{ matcha, user })
   },
   filter:async (req, res, next) => {
     try {

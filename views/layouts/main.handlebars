@@ -41,8 +41,8 @@
       <div class="container-fluid mt-4">
         {{> message}}
         <!--店名搜尋-->
-        <form class="d-flex">
-          <input class="form-control mx-1" style="width: 23vw; height: 50px" type="search" placeholder="請輸入要尋找的抹茶名稱..." aria-label="Search">
+        <form class="d-flex" action="/search" method="post">
+          <input class="form-control mx-1" style="width: 23vw; height: 50px" type="text" name="keyword" placeholder="請輸入要尋找的抹茶名稱..." aria-label="Search" value="{{keyword}}">
           <button class="btn btn-outline-secondary mx-1" type="submit">搜尋</button>
         </form>
         <div class="card mt-4" style="width: 29vw;">
