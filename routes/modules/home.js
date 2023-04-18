@@ -5,5 +5,6 @@ const homeController = require('../../controllers/home-controller')
 router.get('/', homeController.get)
 router.get('/feeds', homeController.feeds)
 router.put('/edit/user', homeController.editUser)
+router.post('/filter', homeController.filter)
 
 module.exports = router

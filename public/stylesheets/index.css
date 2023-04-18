@@ -1,3 +1,6 @@
+html, body {
+  font-family: 'Ma Shan Zheng', cursive;
+}
 .navbar {
   background-color: rgb(123,139,111);
 }
