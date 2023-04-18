@@ -37,18 +37,20 @@
   </nav>
 
   <div class="d-flex">
-    <div id="search" class="container bg-light">
+    <div id="search" class="container card-color">
+      {{#if isAuthenticated}}
       <div class="container-fluid mt-4">
         {{> message}}
         <!--店名搜尋-->
         <form class="d-flex" action="/search" method="post">
-          <input class="form-control mx-1" style="width: 23vw; height: 50px" type="text" name="keyword" placeholder="請輸入要尋找的抹茶名稱..." aria-label="Search" value="{{keyword}}">
+          <input class="form-control mx-1 input-color" style="width: 23vw; height: 50px" type="text" name="keyword" placeholder="請輸入要尋找的抹茶名稱..." aria-label="Search" value="{{keyword}}">
           <button class="btn btn-outline-secondary mx-1" type="submit">搜尋</button>
         </form>
+        <!--篩選條件-->
         <div class="card mt-4" style="width: 29vw;">
           <form action="/filter" method="post">
-            <label class="card-header" style="width: 29vw;">篩選條件：</label><br>
-            <div class="card-body" style="background-color: rgba(238, 240, 242, 0.663);">            
+            <label class="card-header card-color" style="width: 28.9vw;">篩選條件：</label><br>
+            <div class="card-body card-color">            
               <!--類別搜尋-->
               <div class="container mt-1">
                 <h4>店家類別</h4>
@@ -93,7 +95,6 @@
                   <span>宅配</span>
                 </label>
               </div>
-              {{#if isAuthenticated}}
               <!--使用者喜好搜尋-->
               <div class="container mt-3">
                 <h4>抹茶</h4>
@@ -110,22 +111,21 @@
                   <span>有推薦</span>
                 </label>
               </div>
-              {{/if}}
               <div style="text-align: right;">
                 <input class="btn btn-secondary mt-2" style="display: inline-block;" type="submit" value="送出">
               </div>
             </div>
           </form>
         </div>
-        {{#if isAuthenticated}}
+        <!--新增餐廳-->
         <form action="/matchas/create" method="GET" style="display: contents;">
-          <div class="d-flex container mt-5">
+          <div class="d-flex container mt-3">
             <h4>新增餐廳</h4>
             <button type="submit" class="btn btn-outline-secondary mx-2">+</button>
           </div>
-        </form>
-        {{/if}}
+        </form>      
       </div>
+      {{/if}}
     </div>
   
     <div id="matcha" style="background-color: rgb(224,229,223);">{{{body}}}</div>
@@ -142,7 +142,7 @@
       <form action="/edit/user?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="form-row mb-3 mt-2 center">
           <img id="user_img" src="{{user.image}}" style="width: 150px;height: 150px;border-radius: 50%">
-          <input class="input-color"type="file" onchange="readURL(this)" targetID="user_img" name="image">
+          <input class="input-color mt-3"type="file" onchange="readURL(this)" targetID="user_img" name="image">
         </div>
         <div class="form-row mb-3">
           <label class="form-label" for="name">名稱</label>

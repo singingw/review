@@ -7,6 +7,9 @@ html, body {
 .nav-link {
   color: #102832;
 }
+.nav-link:hover {
+  color: #102832;
+}
 a {
   color: #102832;
   text-decoration: none;
@@ -22,6 +25,7 @@ li {
 #search {
   height: 92vh;
   width: 33vw;
+  border: 3px solid #ddd;
   overflow-y:auto;
 }
 #index {
