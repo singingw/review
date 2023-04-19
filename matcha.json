@@ -1,0 +1,92 @@
+[
+    {
+        "name": "午冬",
+        "tel": "0223820515",
+        "address": "10678台北市大安區樂利路33號",
+        "openingHours": "週三 - 週日 12:30 - 18:30 ",
+        "image": "https://i.imgur.com/OdqfDuo.jpeg",
+        "website": "https://www.instagram.com/5.tung_/?igshid=i1a8ski3oani",
+        "district": "北部",
+        "category": "下午茶"
+    },
+    {
+        "name": "Tom&Maggy 幸福肥",
+        "tel": "0966104276",
+        "address": "241新北市三重區集美街33巷20號",
+        "openingHours": "週三 - 週日 14:00 - 20:00 ",
+        "image": "https://i.imgur.com/wF5ySqi.jpeg",
+        "website": "http://www.facebook.com/happyfat.com.tw",
+        "district": "北部",
+        "category": "工作室"
+    },
+    {
+        "name": "上咖啡",
+        "tel": "033565666",
+        "address": "330桃園市桃園區慈文路160號",
+        "openingHours": "10:30 - 19:30 ",
+        "image": "https://i.imgur.com/yOPTGWF.jpeg",
+        "website": "https://www.facebook.com/pages/%E4%B8%8A%E5%92%96%E5%95%A1/294910517333156?sk=timeline",
+        "district": "北部",
+        "category": "餐廳"
+    },
+    {
+        "name": "慢食堂",
+        "tel": "033362667",
+        "address": "330桃園市桃園區鎮三街52號",
+        "openingHours": "週二 - 週六 11:00 - 18:00 ",
+        "image": "https://i.imgur.com/QSAkudS.jpeg",
+        "website": "https://www.facebook.com/tamaice/",
+        "district": "北部",
+        "category": "下午茶"
+    },
+    {
+        "name": "京都伊藤久右衛門",
+        "tel": "0225675335",
+        "address": "10491台北市中山區中山北路一段132號",
+        "openingHours": "12:00 - 17:50 ",
+        "image": "https://i.imgur.com/38g4Inj.jpeg",
+        "website": "https://www.facebook.com/itohkyuemonTW",
+        "district": "北部",
+        "category": "餐廳"
+    },
+    {
+        "name": "浪花丸かき氷",
+        "tel": "0226282727",
+        "address": "251新北市淡水區中正路233-2號1樓",
+        "openingHours": "週四 - 周六 13:00 - 19:00 ",
+        "image": "https://i.imgur.com/AthGHAw.jpeg",
+        "website": "https://www.facebook.com/naniwamaru68/",
+        "district": "北部",
+        "category": "下午茶"
+    },
+    {
+        "name": "木白甜點咖啡店",
+        "tel": "0223918671",
+        "address": "100台北市中正區林森北路9巷23-2號",
+        "openingHours": "12:00 - 21:00 ",
+        "image": "https://i.imgur.com/OUanoGf.jpeg",
+        "website": "https://www.facebook.com/%E6%9C%A8%E7%99%BD%E7%94%9C%E9%BB%9E%E5%92%96%E5%95%A1%E5%BA%97-890951091030686/",
+        "district": "北部",
+        "category": "下午茶"
+    },
+    {
+        "name": "京町山本屋",
+        "tel": "0223910206",
+        "address": "106台北市大安區金華街143號",
+        "openingHours": "週五 - 週三 11:00 - 20:00",
+        "image": "https://i.imgur.com/3NjBjYX.jpeg",
+        "website": "https://www.facebook.com/kyomachi.yamamotoya/",
+        "district": "北部",
+        "category": "餐廳"
+    },
+    {
+        "name": "小樂堂",
+        "tel": "0229107567",
+        "address": "231新北市新店區二十張路1巷3弄3號",
+        "openingHours": "12:00 - 18:00",
+        "image": "https://i.imgur.com/hAYRinE.jpeg",
+        "website": "https://www.facebook.com/Rurus01/",
+        "district": "北部",
+        "category": "下午茶"
+    }
+]
