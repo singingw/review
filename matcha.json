@@ -7,7 +7,12 @@
         "image": "https://i.imgur.com/OdqfDuo.jpeg",
         "website": "https://www.instagram.com/5.tung_/?igshid=i1a8ski3oani",
         "district": "北部",
-        "category": "下午茶"
+        "category": "下午茶",
+        "matchaComment": {
+            "description": "各種好吃好拍的千層酥，其中 FLAN 是必吃選項，每個月甜點種類都不太一樣，一定要提早至少 40 分鐘去排隊，不然無法通通都來一份！\n店內抹茶是用小山園若竹製作，茶味的濃度與香氣只要一品嚐就能吃到，須注意濃抹私藏與抹茶拿鐵，不是抹茶控不能亂嘗試。",
+            "matcha": "午冬",
+            "image": "https://i.imgur.com/CaLvWGE.jpeg"
+        }
     },
     {
         "name": "Tom&Maggy 幸福肥",
@@ -17,7 +22,12 @@
         "image": "https://i.imgur.com/wF5ySqi.jpeg",
         "website": "http://www.facebook.com/happyfat.com.tw",
         "district": "北部",
-        "category": "工作室"
+        "category": "工作室",
+        "matchaComment": {
+            "description": "芋頭類、茶類甜點都很不錯\n若竹濃抹茶盒子有無麻糬版，是抹茶控才吃得了的，75% 心悸抹茶甜點，如果有熬夜需求是很不錯的選擇。\n抹茶千層每一層都夾有滿滿的抹茶餡，再淋上香濃抹茶醬，茶味就更上一層樓。\n小山園抹茶塔不會太乾、太甜，吃起來有著香濃茶香，且酥脆度適中。",
+            "matcha": "Tom&Maggy 幸福肥",
+            "image": "https://i.imgur.com/cRrcZYx.jpeg"
+        }
     },
     {
         "name": "上咖啡",
@@ -27,7 +37,12 @@
         "image": "https://i.imgur.com/yOPTGWF.jpeg",
         "website": "https://www.facebook.com/pages/%E4%B8%8A%E5%92%96%E5%95%A1/294910517333156?sk=timeline",
         "district": "北部",
-        "category": "餐廳"
+        "category": "餐廳",
+        "matchaComment": {
+            "description": "宇治抹茶熱蛋糕是現點現做的，但不會等太久，一開始可以先吃沒有沾到醬的，這就有著淡淡抹茶香氣了，再搭配上抹茶醬會多些甜度，當然更多是抹茶的深度與層次，雖然多了巧克力甜度，但整體甜度依然可以接受。\n抹茶善哉有著濃厚現刷抹茶，還有白玉的 Q 彈口感與解膩昆布，很有日本茶舖的感覺。",
+            "matcha": "上咖啡",
+            "image": "https://i.imgur.com/zkyr3iq.jpeg"
+        }
     },
     {
         "name": "慢食堂",
@@ -37,7 +52,12 @@
         "image": "https://i.imgur.com/QSAkudS.jpeg",
         "website": "https://www.facebook.com/tamaice/",
         "district": "北部",
-        "category": "下午茶"
+        "category": "下午茶",
+        "matchaComment": {
+            "description": "慢食堂的冰品有分一般版及 Mini 版，抹茶刨冰能感受到抹茶的苦澀感，上方抹茶凍的抹茶香剛好，不會過輕而無味，整體並不會過於甜膩。 ",
+            "matcha": "慢食堂",
+            "image": "https://i.imgur.com/qnW1OFK.jpeg"
+        }
     },
     {
         "name": "京都伊藤久右衛門",
@@ -47,7 +67,12 @@
         "image": "https://i.imgur.com/38g4Inj.jpeg",
         "website": "https://www.facebook.com/itohkyuemonTW",
         "district": "北部",
-        "category": "餐廳"
+        "category": "餐廳",
+        "matchaComment": {
+            "description": "京都伊藤久右衛門的海外第一個據點在台灣！！\n但台灣分店服務態度真的不太好，可食物不錯的抹茶店XD\n有鹹的、甜的、飲品、正餐與玩具，抹茶種類很多可以滿足多種選擇。",
+            "matcha": "京都伊藤久右衛門",
+            "image": "https://i.imgur.com/UxPCSPG.jpeg"
+        }
     },
     {
         "name": "浪花丸かき氷",
@@ -57,7 +82,12 @@
         "image": "https://i.imgur.com/AthGHAw.jpeg",
         "website": "https://www.facebook.com/naniwamaru68/",
         "district": "北部",
-        "category": "下午茶"
+        "category": "下午茶",
+        "matchaComment": {
+            "description": "走著日系質感的冰品店，店內店外風裝潢可愛，旁邊還能看海看夕陽。抹茶茶香適中，不會太甜又能嘗到抹茶的香氣，其中大和號上方抹醬更是增加了抹茶的苦韻，也提升了茶香。",
+            "matcha": "浪花丸かき氷",
+            "image": "https://i.imgur.com/v7vI5Sr.jpeg"
+        }
     },
     {
         "name": "木白甜點咖啡店",
@@ -67,7 +97,12 @@
         "image": "https://i.imgur.com/OUanoGf.jpeg",
         "website": "https://www.facebook.com/%E6%9C%A8%E7%99%BD%E7%94%9C%E9%BB%9E%E5%92%96%E5%95%A1%E5%BA%97-890951091030686/",
         "district": "北部",
-        "category": "下午茶"
+        "category": "餐廳",
+        "matchaComment": {
+            "description": "捷運行天宮站附近的下午悠閒好去處，有著小店的溫馨感，抹茶甜點及飲品是使用森半抹茶製作，雖然抹茶味不是非常濃郁，但在香氣口感還有外觀上，是能夠讓抹茶控喜歡的。",
+            "matcha": "木白甜點咖啡店",
+            "image": "https://i.imgur.com/5B8aAQW.jpeg"
+        }
     },
     {
         "name": "京町山本屋",
@@ -77,7 +112,12 @@
         "image": "https://i.imgur.com/3NjBjYX.jpeg",
         "website": "https://www.facebook.com/kyomachi.yamamotoya/",
         "district": "北部",
-        "category": "餐廳"
+        "category": "餐廳",
+        "matchaComment": {
+            "description": "以日式茶屋形式提供餐點，抹茶食物有著一定的水準，且現刷抹茶綿密的口感與苦韻，再加上甜甜的和菓子，真是絕配！",
+            "matcha": "京町山本屋",
+            "image": "https://i.imgur.com/U4aMGgN.jpeg"
+        }
     },
     {
         "name": "小樂堂",
@@ -87,6 +127,11 @@
         "image": "https://i.imgur.com/hAYRinE.jpeg",
         "website": "https://www.facebook.com/Rurus01/",
         "district": "北部",
-        "category": "下午茶"
+        "category": "下午茶",
+        "matchaComment": {
+            "description": "有多種抹茶蛋糕捲可選擇，裡包著伊斯尼鮮奶油製作的抹茶生乳餡，有著抹茶的微苦回甘與茶味香氣，蛋糕體口感鬆軟綿密又濕潤，整體的茶味甜度適中，清爽不膩口。",
+            "matcha": "小樂堂",
+            "image": "https://i.imgur.com/zKfDcXQ.jpeg"
+        }
     }
 ]
