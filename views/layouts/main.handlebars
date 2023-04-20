@@ -40,7 +40,6 @@
     <div id="search" class="container card-color">
       {{#if isAuthenticated}}
       <div class="container-fluid mt-4">
-        {{> message}}
         <!--店名搜尋-->
         <form class="d-flex" action="/search" method="post">
           <input class="form-control mx-1 input-color" style="width: 23vw; height: 50px" type="text" name="keyword" placeholder="請輸入要尋找的抹茶名稱..." aria-label="Search" value="{{keyword}}">
@@ -127,6 +126,7 @@
       </div>
       {{else}}
       <div class="mx-4 mt-4" style="color: #102832;">
+        {{> message}}
         <h3>簡介：</h3>
         <h4 class="mt-2">
           當今社會，抹茶已成為越來越多人的最愛，如果你也是抹茶控，那麼 Matcha Review Website | Taiwan 這個網站是你可以來體驗的地方。

@@ -88,7 +88,9 @@
           <div class="container mx-1">
             <h5>{{this.User.name}}</h5>
             <h6>{{this.description}}</h6>
-            <img class="rounded mx-4" src="{{this.image}}" alt="使用者頭像" style="width: 250px;height: 250px">
+            {{#if this.image}}
+            <img class="rounded mx-4" src="{{this.image}}" alt="評論照片" style="width: 250px;height: 250px">
+            {{/if}}
           </div>
         </div>
         {{/each}}

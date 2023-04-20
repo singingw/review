@@ -14,12 +14,13 @@ module.exports = app => {
     profileFields: ['email', 'displayName']
   }, (accessToken, refreshToken, profile, done) => {
     const { name, email } = profile._json
-    User.findOne({ email })
+    User.findOne({ where: { email } })
       .then(user => {
         if (user) {
           return done(null, user)
         } else {
           User.create({
+            image: 'https://i.imgur.com/Ws5HXdf.jpeg',
             name,
             email
           }).then(user => {
