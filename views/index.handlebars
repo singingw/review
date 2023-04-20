@@ -2,6 +2,8 @@
   <div class="card-header card-header-color">
     {{> matcha-tabs route='index'}}
   </div>
+
+  {{#if matcha}}    
   <div id="index" class="card-body mx-4">
     {{#each matcha}}
     <a href="/matchas/matcha/{{ this.id }}">
@@ -15,4 +17,11 @@
     </a>
     {{/each}}
   </div>
+  {{else}}
+  <div class="centerr mt-5 p-5">
+    <h1 class="p-1">搜尋不到符合的資訊</h1>
+    <p class="p-1">請嘗試輸入其他關鍵字</p>
+    <a class="btn btn-secondary btn-sm" href="/" role="button"> back <i class="fas fa-undo"></i></a>
+  </div>
+  {{/if}}
 </div>
