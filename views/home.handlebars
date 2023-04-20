@@ -98,17 +98,25 @@
     <div id="public-comment" class="card">
       <h4 class="card-header card-header-color" style="text-align: center; letter-spacing: 0.5em;">大眾評論</h4>
       <div class="card-body card-color" style="overflow-x: auto;">
+        {{#each generalComment}}
         <div class="d-flex mt-2" style="width: 23vw;">
           <div>
-            <img class="mx-1" src="https://i.imgur.com/aMHhegr.jpeg" alt="使用者頭像"
+            <img class="mx-1" src="{{this.User.image}}" alt="使用者頭像"
               style="width: 50px;height: 50px;border-radius: 50%">
           </div>
           <div class="container mx-1">
-            <h5>名字</h5>
-            <h6>這個錯誤可能是因為您試圖訪問一個未定義或為空的值的屬性。根據您之前提供的代碼，我</h6>
-            <img class="rounded mx-4" src="https://i.imgur.com/aMHhegr.jpeg" alt="使用者頭像" style="width: 250px;height: 250px">
+            <h5>{{this.User.name}}</h5>
+            <div id="star-rating" data-rating="{{this.rating}}">
+              <i class="fa fa-star" style="color: #8b9098;"></i>
+              <i class="fa fa-star" style="color: #8b9098;"></i>
+              <i class="fa fa-star" style="color: #8b9098;"></i>
+              <i class="fa fa-star" style="color: #8b9098;"></i>
+              <i class="fa fa-star" style="color: #8b9098;"></i>
+            </div>
+            <h6>{{this.description}}</h6>
           </div>
         </div>
+        {{/each}}
       </div>
     </div>
   </div>

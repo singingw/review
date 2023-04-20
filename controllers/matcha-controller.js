@@ -1,5 +1,5 @@
 const { imgurFileHandler } = require('../helpers/file-helpers')
-const { User, Matcha, Category, Collect, Recommend, MatchaComment } = require('../models')
+const { User, Matcha, Category, Collect, Recommend, MatchaComment, GeneralComment } = require('../models')
 const { getUser, getUserData } = require('../helpers/helper')
 
 const matchaController = {
@@ -28,6 +28,17 @@ const matchaController = {
           raw: true,
           order: [['created_at', 'DESC']]
       })
+      const generalComment = await GeneralComment.findAll({
+          where: { matchaId },
+          attributes: ['id', 'description', 'rating', 'userId', 'createdAt'],
+          include: [{
+            model: User,
+            attributes: ['name', 'image']
+          }],
+          nest: true,
+          raw: true,
+          order: [['created_at', 'DESC']]
+      })
       const recommend = await Recommend.findOne({
         where: { userId, matchaId }
       })   
@@ -37,7 +48,7 @@ const matchaController = {
       const recommendCount = await Recommend.count({
         where: { matchaId }
       })
-      res.render('home', { user, matcha, collect, recommend, recommendCount, matchaComment })
+      res.render('home', { user, matcha, collect, recommend, recommendCount, matchaComment, generalComment })
     } catch (err) {
       next(err)
     }
