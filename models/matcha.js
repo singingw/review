@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       Matcha.hasMany(models.Collect, { foreignKey: 'matchaId' })
       Matcha.hasMany(models.Recommend, { foreignKey: 'matchaId' })
       Matcha.hasMany(models.MatchaComment, { foreignKey: 'matchaId' })
+      Matcha.hasMany(models.GeneralComment, { foreignKey: 'matchaId' })
     }
   }
   Matcha.init({

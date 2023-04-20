@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Collect, { foreignKey: 'userId' })
       User.hasMany(models.Recommend, { foreignKey: 'userId' })
       User.hasMany(models.MatchaComment, { foreignKey: 'userId' })
+      User.hasMany(models.GeneralComment, { foreignKey: 'userId' })
     }
   }
   User.init({
