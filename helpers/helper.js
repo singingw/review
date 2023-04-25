@@ -96,10 +96,14 @@ async function Commented(matchaObj) {
     attributes: ['id', 'matchaId'],
     raw: true
   })
-  const matchedCommented = comment.map((c) => {
-    const matcha = matchaObj[c.matchaId]
-    return matcha
-  }).filter(matcha => matcha !== undefined)
+  const matchedCommentedObj = comment.reduce((mco, c) => {
+    const matchaId = c.matchaId
+    if (!mco[matchaId]) {
+      mco[matchaId] = matchaObj[matchaId]
+    }
+    return mco
+  }, {})
+  const matchedCommented = Object.values(matchedCommentedObj).filter(matcha => matcha !== undefined)
   return matchedCommented
 }
 
